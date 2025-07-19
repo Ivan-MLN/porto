@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #6c63ff;
@@ -66,6 +67,63 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,0 1000,300 1000,1000 0,700"/></svg>');
             background-size: cover;
+        }
+
+        .coding-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .code-element {
+            position: absolute;
+            font-family: 'JetBrains Mono', 'Consolas', monospace;
+            font-weight: 400;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .code-element.small {
+            font-size: 1.2rem;
+        }
+
+        .code-element.medium {
+            font-size: 1.8rem;
+        }
+
+        .code-element.large {
+            font-size: 2.5rem;
+        }
+
+        .code-element:nth-child(odd) {
+            animation-direction: reverse;
+        }
+
+        .code-element:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .code-element:nth-child(2) { top: 20%; right: 10%; animation-delay: -2s; }
+        .code-element:nth-child(3) { top: 30%; left: 15%; animation-delay: -4s; }
+        .code-element:nth-child(4) { top: 40%; right: 20%; animation-delay: -6s; }
+        .code-element:nth-child(5) { top: 50%; left: 8%; animation-delay: -8s; }
+        .code-element:nth-child(6) { top: 60%; right: 15%; animation-delay: -10s; }
+        .code-element:nth-child(7) { top: 70%; left: 25%; animation-delay: -12s; }
+        .code-element:nth-child(8) { top: 80%; right: 8%; animation-delay: -14s; }
+        .code-element:nth-child(9) { top: 15%; left: 50%; animation-delay: -16s; }
+        .code-element:nth-child(10) { top: 35%; right: 50%; animation-delay: -18s; }
+        .code-element:nth-child(11) { top: 55%; left: 70%; animation-delay: -3s; }
+        .code-element:nth-child(12) { top: 75%; right: 30%; animation-delay: -7s; }
+        .code-element:nth-child(13) { top: 25%; left: 80%; animation-delay: -11s; }
+        .code-element:nth-child(14) { top: 45%; right: 70%; animation-delay: -15s; }
+        .code-element:nth-child(15) { top: 65%; left: 40%; animation-delay: -1s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
         }
 
         .hero-content {
@@ -235,6 +293,7 @@
             width: 24px;
             height: 24px;
         }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -247,6 +306,22 @@
             
             .section-title {
                 font-size: 2rem;
+            }
+
+            .code-element {
+                font-size: 1rem !important;
+            }
+
+            .code-element.small {
+                font-size: 0.8rem !important;
+            }
+
+            .code-element.medium {
+                font-size: 1.2rem !important;
+            }
+
+            .code-element.large {
+                font-size: 1.6rem !important;
             }
         }
 
@@ -289,6 +364,23 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
+        <div class="coding-background">
+            <div class="code-element small">&lt;html&gt;</div>
+            <div class="code-element medium">{}</div>
+            <div class="code-element large">&lt;/&gt;</div>
+            <div class="code-element small">function()</div>
+            <div class="code-element medium">&lt;div&gt;</div>
+            <div class="code-element large">[ ]</div>
+            <div class="code-element small">&lt;/html&gt;</div>
+            <div class="code-element medium">=&gt;</div>
+            <div class="code-element large">&lt;?&gt;</div>
+            <div class="code-element small">console.log</div>
+            <div class="code-element medium">&lt;script&gt;</div>
+            <div class="code-element large">( )</div>
+            <div class="code-element small">const</div>
+            <div class="code-element medium">&lt;css&gt;</div>
+            <div class="code-element large">{ }</div>
+        </div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
