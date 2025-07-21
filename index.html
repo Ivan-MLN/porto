@@ -31,14 +31,46 @@
             background-color: var(--dark-color);
         }
 
-        .navbar {
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-        }
+.navbar {
+    background: rgba(15, 15, 15, 0.85) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+.navbar.scrolled {
+    background: rgba(15, 15, 15, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 212, 255, 0.15);
+}
+.btn-visit {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    color: var(--dark-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
 
+.btn-visit:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.btn-visit i {
+    font-size: 1rem;
+}
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
@@ -616,7 +648,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://pomf2.lain.la/f/zukaxmb8.jpeg" alt="Mulai Aja Dulu">
+                        <img src="https://pomf2.lain.la/f/f9lu8n1.png" alt="Mulai Aja Dulu">
                         <div class="card-body">
                             <h5 class="card-title">Mulai Aja Dulu</h5>
                             <p class="card-text">Website untuk memulai aplikasi kesehatan dengan kontribusi saya sebagai backend.</p>
@@ -625,7 +657,11 @@
                                 <span class="badge bg-primary me-1">CSS</span>
                                 <span class="badge bg-primary me-1">JS</span>
                             </div>
-                            <a href="https://www.mulaiajadulu.my.id/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+<a href="https://www.mulaiajadulu.my.id/" target="_blank" class="btn btn-visit">
+    <i class="fas fa-external-link-alt"></i>
+    Visit Now
+</a>
+
                         </div>
                     </div>
                 </div>
@@ -642,7 +678,10 @@
                             </div>
                                                             <span class="badge bg-primary me-1">Node.JS</span>
                             </div>
-                            <a href="https://dxserver.pw/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+<a href="https://dxserver.pw/" target="_blank" class="btn btn-visit">
+    <i class="fas fa-external-link-alt"></i>
+    Visit Now
+</a>
                         </div>
                     </div>
                 </div>
@@ -659,7 +698,11 @@
                             </div>
                                                             <span class="badge bg-primary me-1">Node.JS</span>
                             </div>
-                            <a href="https://www.redactorintelligence.site/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+<a href="https://www.redactorintelligence.site/" target="_blank" class="btn btn-visit">
+    <i class="fas fa-external-link-alt"></i>
+    Visit Now
+</a>
+
                         </div>
                     </div>
                 </div>
@@ -676,7 +719,10 @@
                             </div>
                                                             <span class="badge bg-primary me-1">Node.JS</span>
                             </div>
-                            <a href="https://www.sigmaintelligence.site/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+<a href="https://www.sigmaintelligence.site/" target="_blank" class="btn btn-visit">
+    <i class="fas fa-external-link-alt"></i>
+    Visit Now
+</a>
                         </div>
                     </div>
                 </div>
