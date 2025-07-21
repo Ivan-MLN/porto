@@ -14,25 +14,29 @@
     <style>
     
         :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #f8f9fa;
-            --dark-color: #2d3748;
-            --light-color: #ffffff;
+            --primary-color: #00d4ff;
+            --secondary-color: #1a1a1a;
+            --dark-color: #0f0f0f;
+            --card-color: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-color: #00a8cc;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--dark-color);
+            color: var(--text-primary);
             font-weight: 400;
-            background: linear-gradient(135deg, #dc2626, #ef4444);
+            background-color: var(--dark-color);
         }
 
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         .navbar-brand {
@@ -44,6 +48,7 @@
         .nav-link {
             font-weight: 500;
             transition: color 0.3s ease;
+            color: var(--text-secondary) !important;
         }
 
         .nav-link:hover {
@@ -52,7 +57,7 @@
 
         .hero-section {
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--primary-color), #4facfe);
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
             display: flex;
             align-items: center;
             color: white;
@@ -67,8 +72,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            background-size: cover;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(0, 168, 204, 0.08) 0%, transparent 50%);
         }
 
         .coding-background {
@@ -85,18 +90,11 @@
             position: absolute;
             font-family: 'JetBrains Mono', 'Consolas', monospace;
             font-weight: 400;
-            opacity: 0.3;
+            opacity: 0.08;
+            color: var(--primary-color);
             animation: float 20s infinite linear;
             user-select: none;
             pointer-events: none;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.8),
-                0 0 20px rgba(255, 255, 255, 0.6),
-                0 0 30px rgba(255, 255, 255, 0.4),
-                0 0 40px rgba(108, 99, 255, 0.6),
-                0 0 50px rgba(108, 99, 255, 0.4),
-                0 0 60px rgba(108, 99, 255, 0.2);
-            filter: brightness(1.5);
         }
 
         .code-element.small {
@@ -140,12 +138,12 @@
             position: relative;
             z-index: 2;
         }
+
         .profile-img-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 0;
-            margin-top: -50px;
+            align-items: center;
+            padding: 0.5rem 0 2rem 0;
         }
 
         .profile-img {
@@ -153,17 +151,17 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
             transition: all 0.3s ease;
         }
 
         .profile-img:hover {
             transform: scale(1.05);
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.4);
         }
-        
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 700;
@@ -173,6 +171,10 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            background: linear-gradient(135deg, var(--primary-color), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
@@ -181,21 +183,24 @@
             opacity: 0.9;
             text-align: center;
             font-weight: 500;
+            color: var(--text-secondary);
         }
 
         .btn-primary {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border: none;
             padding: 12px 30px;
             font-weight: 600;
             border-radius: 50px;
             transition: all 0.3s ease;
+            color: var(--dark-color);
         }
 
         .btn-primary:hover {
-            background: #5a52d5;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+            color: var(--dark-color);
         }
 
         .section-title {
@@ -205,6 +210,7 @@
             position: relative;
             text-align: center;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         .section-title::after {
@@ -215,13 +221,14 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 2px;
         }
 
         .card {
-            border: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            background-color: var(--card-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             border-radius: 15px;
             overflow: hidden;
@@ -229,22 +236,41 @@
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .card-title {
+            color: var(--text-primary);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
         }
 
         .skill-item {
-            background: white;
+            background: var(--card-color);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             margin-bottom: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         .skill-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .skill-item h4 {
+            color: var(--text-primary);
+        }
+
+        .skill-item p {
+            color: var(--text-secondary);
         }
 
         .skill-icon {
@@ -258,17 +284,27 @@
         }
 
         .contact-card {
-            background: white;
+            background: var(--card-color);
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             text-align: center;
             transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .contact-card h5 {
+            color: var(--text-primary);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
         }
 
         .contact-icon {
@@ -279,13 +315,14 @@
 
         .footer {
             background: var(--dark-color);
-            color: white;
+            color: var(--text-secondary);
             padding: 3rem 0;
             text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         .social-links a {
-            color: white;
+            color: var(--text-secondary);
             font-size: 1.5rem;
             margin: 0 10px;
             transition: color 0.3s ease;
@@ -298,47 +335,77 @@
         .progress {
             height: 10px;
             border-radius: 5px;
-            background: #e9ecef;
+            background: #2a2a2a;
         }
 
         .progress-bar {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 5px;
         }
 
         .navbar-toggler {
-            border: none;
+            border: 1px solid rgba(0, 212, 255, 0.3);
             padding: 4px 8px;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .navbar-toggler:focus {
-            box-shadow: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
         }
 
         .navbar-toggler:hover {
-            background-color: rgba(108, 99, 255, 0.1);
+            background-color: rgba(0, 212, 255, 0.1);
         }
 
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%236c63ff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300d4ff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
             width: 24px;
             height: 24px;
         }
 
-        /* Override body background for specific sections */
-        #about, #skills, #projects, #contact, .footer {
-            background: white;
-            margin: 0;
+        .form-control {
+            background-color: var(--card-color);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--text-primary);
+            border-radius: 10px;
         }
 
-        #skills {
-            background: var(--secondary-color) !important;
+        .form-control:focus {
+            background-color: var(--card-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+            color: var(--text-primary);
         }
 
-        #contact {
-            background: var(--secondary-color) !important;
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .badge.bg-primary {
+            background-color: var(--primary-color) !important;
+            color: var(--dark-color);
+        }
+
+        #about {
+            background: var(--secondary-color);
+        }
+
+        #about .lead {
+            color: var(--text-primary);
+        }
+
+        #about p {
+            color: var(--text-secondary);
+        }
+
+        #about h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        #projects {
+            background: var(--dark-color);
         }
 
         @media (max-width: 768px) {
@@ -352,9 +419,8 @@
             }
 
             .profile-img-container {
-                margin-top: -30px;
+                padding: 0.5rem 0 1rem 0;
             }
-            
             .hero-subtitle {
                 font-size: 1.2rem;
             }
@@ -385,9 +451,6 @@
                 width: 280px;
                 height: 280px;
             }
-            .profile-img-container {
-                margin-top: -40px;
-            }
             .hero-title {
                 font-size: 3rem;
             }
@@ -396,7 +459,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Ivan Maulana</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -444,14 +507,13 @@
             <div class="code-element large">POST</div>
         </div>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
                     <div class="hero-content text-center">
-                        <div class="col-lg-6 text-center">
-                            <div class="profile-img-container">
-                                <img src="https://pomf2.lain.la/f/9q2m5m9.jpeg" alt="Profile" class="profile-img">
-                            </div>
+                        <div class="profile-img-container">
+                            <img src="https://pomf2.lain.la/f/9q2m5m9.jpeg" alt="Profile" class="profile-img">
                         </div>
+                        <h1 class="hero-title">Ivan Maulana</h1>
                         <p class="hero-subtitle">Backend Developer & API Specialist</p>
                         
                         <p class="mb-4">Halo! Nama saya Ivan, seorang siswa SMK yang passionate dengan dunia backend development. Saya suka sekali ngoding menggunakan Express.JS untuk membangun API yang keren dan berfungsi dengan baik.</p>
@@ -497,7 +559,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="skills" class="py-5 bg-dark">
         <div class="container">
             <h2 class="section-title">Keahlian</h2>
             <div class="row">
@@ -554,25 +616,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/350x200/6c63ff/ffffff?text=Portfolio" class="card-img-top" alt="Portfolio">
-                        <div class="card-body">
-                            <h5 class="card-title">Website Portfolio</h5>
-                            <p class="card-text">Website portfolio pribadi yang menampilkan keahlian dan pengalaman sebagai Backend Developer.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1">HTML</span>
-                                <span class="badge bg-primary me-1">CSS</span>
-                                <span class="badge bg-primary me-1">Bootstrap</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/350x200/4facfe/ffffff?text=Mulai+Aja+Dulu" class="card-img-top" alt="Mulai Aja Dulu">
+                        <img src="https://pomf2.lain.la/f/f9lu8n1.png" alt="Mulai Aja Dulu">
                         <div class="card-body">
                             <h5 class="card-title">Mulai Aja Dulu</h5>
-                            <p class="card-text">Website motivasi dan pembelajaran yang mengajak orang untuk mulai belajar programming tanpa ragu.</p>
+                            <p class="card-text">Website untuk memulai aplikasi kesehatan dengan kontribusi saya sebagai backend.</p>
                             <div class="mb-3">
                                 <span class="badge bg-primary me-1">HTML</span>
                                 <span class="badge bg-primary me-1">CSS</span>
@@ -584,16 +631,52 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://www.redactorintelligence.site/assets/logo.png" alt="Redactor Intelligence">
+                        <img src="https://www.redactorintelligence.site/assets/logo.png" class="card-img-top" alt="Redactor Intelligence" style="background-color: #1e1e1e; padding: 2rem;">
                         <div class="card-body">
                             <h5 class="card-title">Redactor Intelligence</h5>
-                            <p class="card-text">Website landing page untuk penjualan dengan integrasi API backend untuk proses runtime bot.</p>
+                            <p class="card-text">Website landing page untuk penjualan bot Intelligence dengan integrasi API backend untuk proses runtime bot.</p>
                             <div class="mb-3">
                                 <span class="badge bg-primary me-1">HTML</span>
                                 <span class="badge bg-primary me-1">CSS</span>
                                 <span class="badge bg-primary me-1">JS</span>
                             </div>
+                                                            <span class="badge bg-primary me-1">Node.JS</span>
+                            </div>
                             <a href="https://www.redactorintelligence.site/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://www.sigmaintelligence.site/assets/logo.png" class="card-img-top" alt="Redactor Intelligence" style="background-color: #1e1e1e; padding: 2rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sigma Intelligence</h5>
+                            <p class="card-text">Website landing page untuk penjualan bot Intelligence dengan integrasi API backend untuk proses runtime bot.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML</span>
+                                <span class="badge bg-primary me-1">CSS</span>
+                                <span class="badge bg-primary me-1">JS</span>
+                            </div>
+                                                            <span class="badge bg-primary me-1">Node.JS</span>
+                            </div>
+                            <a href="https://www.sigmaintelligence.site/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+                        </div>
+                    </div>
+                </div>
+                                                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://pomf2.lain.la/f/d54nucbe.jpeg" class="card-img-top" alt="DX Tools Intelligence" style="background-color: #1e1e1e; padding: 2rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dx Tools Intelligence</h5>
+                            <p class="card-text">Website landing page untuk penjualan bot Intelligence dengan integrasi API backend untuk proses runtime bot.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML</span>
+                                <span class="badge bg-primary me-1">CSS</span>
+                                <span class="badge bg-primary me-1">JS</span>
+                            </div>
+                                                            <span class="badge bg-primary me-1">Node.JS</span>
+                            </div>
+                            <a href="https://dxserver.pw/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
                         </div>
                     </div>
                 </div>
@@ -649,68 +732,4 @@
                         <div class="mb-3">
                             <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Kirim Pesan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>&copy; 2024 Portfolio. Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh Ivan Maulana</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap 5 JavaScript Bundle -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah dikirim.');
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+                        <div class="text-center
