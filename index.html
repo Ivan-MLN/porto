@@ -616,7 +616,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://pomf2.lain.la/f/f9lu8n1.png" alt="Mulai Aja Dulu">
+                        <img src="https://pomf2.lain.la/f/zukaxmb8.jpeg" alt="Mulai Aja Dulu">
                         <div class="card-body">
                             <h5 class="card-title">Mulai Aja Dulu</h5>
                             <p class="card-text">Website untuk memulai aplikasi kesehatan dengan kontribusi saya sebagai backend.</p>
@@ -626,6 +626,23 @@
                                 <span class="badge bg-primary me-1">JS</span>
                             </div>
                             <a href="https://www.mulaiajadulu.my.id/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://pomf2.lain.la/f/d54nucbe.jpeg" class="card-img-top" alt="DX Tools Intelligence" style="background-color: #1e1e1e; padding: 2rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dx Tools Intelligence</h5>
+                            <p class="card-text">Website landing page untuk penjualan bot Intelligence dengan integrasi API backend untuk proses runtime bot.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML</span>
+                                <span class="badge bg-primary me-1">CSS</span>
+                                <span class="badge bg-primary me-1">JS</span>
+                            </div>
+                                                            <span class="badge bg-primary me-1">Node.JS</span>
+                            </div>
+                            <a href="https://dxserver.pw/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
                         </div>
                     </div>
                 </div>
@@ -663,28 +680,12 @@
                         </div>
                     </div>
                 </div>
-                                                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="https://pomf2.lain.la/f/d54nucbe.jpeg" class="card-img-top" alt="DX Tools Intelligence" style="background-color: #1e1e1e; padding: 2rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Dx Tools Intelligence</h5>
-                            <p class="card-text">Website landing page untuk penjualan bot Intelligence dengan integrasi API backend untuk proses runtime bot.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1">HTML</span>
-                                <span class="badge bg-primary me-1">CSS</span>
-                                <span class="badge bg-primary me-1">JS</span>
-                            </div>
-                                                            <span class="badge bg-primary me-1">Node.JS</span>
-                            </div>
-                            <a href="https://dxserver.pw/" target="_blank" class="btn btn-primary">Kunjungi Website</a>
-                        </div>
-                    </div>
-                </div>
+                                        
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section id="contact" class="contact-section py-5">
         <div class="container">
             <h2 class="section-title">Hubungi Saya</h2>
@@ -732,4 +733,68 @@
                         <div class="mb-3">
                             <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
                         </div>
-                        <div class="text-center
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>&copy; 2024 Portfolio. Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh Ivan Maulana</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
