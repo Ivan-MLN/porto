@@ -71,6 +71,91 @@
 .btn-visit i {
     font-size: 1rem;
 }
+/* Color fixes for Projects Section */
+#projects {
+    background: var(--dark-color);
+    color: var(--text-primary);
+}
+
+#projects .card {
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    background-color: var(--card-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#projects .card-body {
+    background-color: var(--card-color);
+    color: var(--text-primary);
+}
+
+#projects .card-title {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#projects .card-text {
+    color: var(--text-secondary) !important;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#projects .card-text strong {
+    color: var(--primary-color);
+}
+
+#projects .list-unstyled li {
+    color: var(--text-secondary) !important;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+#projects .list-unstyled .fas {
+    color: var(--primary-color) !important;
+}
+
+/* Modal styling */
+.modal-content.bg-dark {
+    background-color: var(--card-color) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.modal-content.bg-dark .modal-body {
+    color: var(--text-primary);
+}
+
+.modal-content.bg-dark h6 {
+    color: var(--primary-color) !important;
+    margin-bottom: 0.75rem;
+}
+
+.modal-content.bg-dark .list-unstyled li {
+    color: var(--text-secondary) !important;
+    margin-bottom: 0.4rem;
+}
+
+/* Badge styling */
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: var(--dark-color) !important;
+    font-weight: 500;
+}
+
+/* Button styling */
+.btn-outline-light {
+    color: var(--text-primary);
+    border-color: rgba(0, 212, 255, 0.5);
+    background-color: transparent;
+}
+
+.btn-outline-light:hover {
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
