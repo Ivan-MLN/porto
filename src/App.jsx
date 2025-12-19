@@ -135,7 +135,7 @@ const Portfolio = () => {
               }}
             >
               <img
-                src="/images/profile.jpeg"
+                src="https://u.cubeupload.com/naeladtya/7e57091a9e814d7391b9.jpeg"
                 alt="Ivan"
                 className="w-full h-full object-cover"
                 style={{ filter: 'grayscale(100%) contrast(1.1)' }}
